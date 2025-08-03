@@ -64,10 +64,10 @@ The CNN is composed of the following layers:
   - `Conv2d(1, 32, kernel_size=3, padding=1)`
   - `Conv2d(32, 64, kernel_size=3, padding=1)`
   - `Conv2d(64, 128, kernel_size=3, padding=1)`
-- **Max Pooling:** `MaxPool2d(kernel_size=2, stride=2)` after each convolutional layer.
-- **Dropout:** `Dropout(0.5)` for regularization after the final pooling layer.
+- **Max Pooling:** `MaxPool2d(kernel_size=2, stride=2)` after the first two convolutional layers.
+- **Dropout:** `Dropout(0.5)` for regularization after the first fully connected layer.
 - **Two Fully Connected (Linear) Layers:**
-  - `Linear(128 * 3 * 3, 128)`
-  - `Linear(128, 10)` (Output layer for 10 digit classes)
+  - `Linear(128 * 7 * 7, 512)`
+  - `Linear(512, 10)` (Output layer for 10 digit classes)
 - **Activation Function:** `ReLU` is used throughout the network.
 - **Total Parameters:** ~3.3M
